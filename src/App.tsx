@@ -76,19 +76,25 @@ const stil = {
 
 const initialNodes = pages_1.map((page, index) => ({
   id: `${index + 1}`,
-  position: { x: 0, y: index * 1000 },
+  position: { x: 0, y: index * 1050 },
   data: { label: `${index + 1}` },
   style: {
     ...stil,
     backgroundImage: `url(${page})`,
   },
 }));
-const initialEdges = initialNodes.map((node, index) => ({
+
+const initialEdges = initialNodes.slice(0, initialNodes.length - 1).map((_, index) => ({
   id: `e${index + 1}-${index + 2}`,
   source: `${index + 1}`,
   target: `${index + 2}`,
+  animated: true,
+  style: { stroke: 'red' },
+  label: 'Devam...',
+  labelBgPadding: [10, 10],
+  labelBgBorderRadius: 4,
+  labelBgStyle: { fill: '#FFCC00', color: '#fff' },
 }));
-
 
 export default function App() {
 
