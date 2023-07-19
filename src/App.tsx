@@ -5,9 +5,20 @@ import ReactFlow, {
   Background,
   useNodesState,
   useEdgesState,
-  addEdge,
+  ControlButton
 } from 'reactflow';
 import 'reactflow/dist/style.css';
+
+
+function CustomControls() {
+  return (
+    <Controls>
+      <ControlButton onClick={() => console.log('action')} title="action">
+        <div>D</div>
+      </ControlButton>
+    </Controls>
+  );
+}
 
 const pages_1 = [
   "https://i.ibb.co/StDvRJ4/01.jpg",
@@ -111,7 +122,7 @@ export default function App() {
       fitView
         >
            <Background variant="dots" gap={12} size={1} />
-           <Controls />
+           <CustomControls />
            </ReactFlow>
     </div>
   );
