@@ -5,7 +5,6 @@ import ReactFlow, {
   Background,
   useNodesState,
   useEdgesState,
-  ControlButton,
   Panel
 } from 'reactflow';
 import 'reactflow/dist/style.css';
@@ -87,7 +86,6 @@ const initialNodes = pages_1.map((page, index) => ({
   id: `${index + 1}`,
   position: { x: 0, y: index * 1100 },
   draggaable: true,
-  data: { label: `${index + 1}` },
   style: {
     ...stil,
     backgroundImage: `url(${page})`,
