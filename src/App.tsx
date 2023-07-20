@@ -20,7 +20,7 @@ function ViewPanel({ onNextNodeClick }) {
   );
 }
 
-const defaultViewport = { x: 90, y: 0, zoom: 0.6 };
+const defaultViewport = { x: 50, y: 0, zoom: 0.4 };
 
 const pages_1 = [
   "https://i.ibb.co/StDvRJ4/01.jpg",
@@ -76,14 +76,16 @@ const pages_1 = [
 ];
 
 const stil = {
-  backgroundSize: 'cover',
-  width: 700,
-  height: 980
-}
+  backgroundSize: 'contain',
+  backgroundRepeat: 'no-repeat',
+  display: 'flex',
+  width: 760,
+  height: 1024
+};
 
 const initialNodes = pages_1.map((page, index) => ({
   id: `${index + 1}`,
-  position: { x: 0, y: index * 1050 },
+  position: { x: 0, y: index * 1100 },
   draggaable: true,
   data: { label: `${index + 1}` },
   style: {
